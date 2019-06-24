@@ -62,7 +62,7 @@ Write a function named removeWithForEach that produces the same output as challe
 const removeWithForEach = (arr, removeOne) => {
   arr.forEach(num => {
     removeOne(num, arr);
-  });
+  })
   return arr;
 };
 
@@ -74,7 +74,10 @@ This anonymous function should accept up to three arguments: the element, the in
 ------------------------------------------------------------------------------------------------ */
 
 const removeWithAnon = (arr) => {
-  // Solution code here...
+  arr.forEach((elem, i, arr) => {
+    removeOne(elem, arr);
+  })
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
