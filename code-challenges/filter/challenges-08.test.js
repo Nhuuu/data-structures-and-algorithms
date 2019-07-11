@@ -10,6 +10,7 @@ For example, oddValues([1,2,3]) returns [1,3].
 
 const oddValues = (arr) => {
   // Solution code here...
+  return arr.filter(val => val % 2 === 1);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -23,10 +24,7 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 ------------------------------------------------------------------------------------------------ */
 
 
-const filterStringsWithVowels = (arr) => {
-  // Solution code here...
-};
-
+const filterStringsWithVowels = (arr) => arr.filter(val => val.match(/[aeiou]/g));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -36,9 +34,7 @@ Write a function named notInFirstArray that, given two arrays as input, uses fil
 For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
-const notInFirstArray = (forbiddenValues, arr) => {
-  // Solution code here...
-};
+const notInFirstArray = (forbiddenValues, arr) => arr.filter(val => !forbiddenValues.includes(val));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -79,9 +75,7 @@ const snorlaxData = {
   weight: 4600,
 };
 
-const getBaseStatGreaterThan = (arr, minBaseStat) => {
-  // Solution code here...
-};
+const getBaseStatGreaterThan = (arr, minBaseStat) => arr.filter(val => val.baseStat > minBaseStat );
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -92,7 +86,8 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 ------------------------------------------------------------------------------------------------ */
 
 const getStatName = (arr, minBaseStat) => {
-  // Solution code here...
+  let results = getBaseStatGreaterThan(arr, minBaseStat);
+  return results.map(val => val.stat.name);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -144,9 +139,7 @@ const characters = [
   },
 ];
 
-const getCharactersWithoutChildren = (arr) => {
-  // Solution code here...
-};
+const getCharactersWithoutChildren = (arr) => arr.filter(val => !val.children);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
