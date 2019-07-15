@@ -101,7 +101,7 @@ let starWarsData = [{
   gender: 'female'
 }];
 
-let findMaleAndFemale = data => let findMaleAndFemale = (data) => data.filter(e => /male/.test(e.gender)).map(e => e.name).reduce((a, c) => `${a} and ${c}`);
+let findMaleAndFemale = data => data.filter(e => /male/.test(e.gender)).map(e => e.name).reduce((a, c) => `${a} and ${c}`);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -109,7 +109,7 @@ CHALLENGE 5
 Write a function named findShortest that, given the Star Wars data from Challenge 6, uses any combination of filter, map and reduce to return the name of the shortest character.
 ------------------------------------------------------------------------------------------------ */
 
-let findShortest = data => let findShortest = (data) => data.reduce((a, c) => (parseInt(a.height) < parseInt(c.height)) ? a : c).name;
+let findShortest = data => data.reduce((a, c) => (parseInt(a.height) < parseInt(c.height)) ? a : c).name;
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
