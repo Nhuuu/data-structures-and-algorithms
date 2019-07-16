@@ -152,11 +152,13 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 const calculateAverage = (arr) => {
-  return arr.reduce((count, sum) => {
-    sum 
-    let average = sum / count;
-    return average;
-  })
+  let res = arr.reduce((result, num) => {
+    result.count += 1;
+    result.sum += num;
+    return result;
+  }, {count: 0, sum: 0});
+
+  return res.sum/res.count;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -177,8 +179,14 @@ const isPrime = (value) => {
 };
 
 const countPrimeNumbers = (arr) => {
-  // Solution code here...
+  return arr.reduce((count, value) => {
+    if(isPrime(value)){
+      count += 1;
+    }
+    return count;
+  }, 0);
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
