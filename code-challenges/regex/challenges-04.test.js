@@ -12,9 +12,7 @@ For example:
 'hello world' returns false
 ------------------------------------------------------------------------------------------------ */
 
-const isNum = (input) => {
-  // Solution code here...
-};
+const isNum = input => /(\d+)/g.test(input);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -24,9 +22,7 @@ Write a function named isCapitalized that takes in a string. This function shoul
 Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
-const isCapitalized = (str) => {
-  // Solution code here...
-};
+const isCapitalized = str => str.match(/([A-Z]\w+)/g) ? str.match(/([A-Z]\w+)/g) : [];
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -35,7 +31,9 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  let cities = [];
+  arr.forEach(word => word.match(/^[A-J]\w+/g) ? cities.push(word) : []);
+  return cities;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -50,9 +48,7 @@ If the user enters any of these four inputs, return true. For any other input, r
 Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
-const matchMonth = (input) => {
-  // Solution code here...
-};
+const matchMonth = (input) => /^[Oo](ct)(ober)?$/g.test(input);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -64,9 +60,7 @@ For example, if given the string "Hello, and have a wonderful day!", the word "H
 The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "a ", "wonderful "].
 ------------------------------------------------------------------------------------------------ */
 
-const noPunctuation = str => {
-  // Solution code here...
-};
+const noPunctuation = str => str.match(/[\w]*\w\s/g) ? str.match(/[\w]*\w\s/g) : [];
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -80,9 +74,7 @@ The function should return a string containing the consonants in their original 
 For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 ------------------------------------------------------------------------------------------------ */
 
-let hangman = (str) => {
-  // Solution code here...
-};
+let hangman = (str) => str.replace(/[aeiou]/ig, '_');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
@@ -96,9 +88,7 @@ Hint: All of these words end with the letters "ells".
 
 const seashells = 'She sells seashells by the seashore. The shells she sells are surely seashells. So if she sells shells on the seashore, I\'m sure she sells seashore shells.';
 
-const findShells = (str) => {
-  // Solution code here...
-};
+const findShells = (str) => str.match(/((seash)?(sh)?(s)?)?ells/g);
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
