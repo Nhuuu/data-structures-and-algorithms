@@ -8,9 +8,7 @@ Write a function named validatePin that uses a regular expression pattern to val
 If the PIN is four numerical digits long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
 
-const validatePin = (pin) => {
-  // Solution code here...
-};
+const validatePin = pin => /^\d{4}$/g.test(pin);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -28,9 +26,7 @@ Return either true or false.
 Note: if you ever need to validate an email using a regex in practice, the Internet has the actual regex you should use. It's many many lines long.
 ------------------------------------------------------------------------------------------------ */
 
-const validateEmail = (email) => {
-  // Solution code here...
-};
+const validateEmail = email => /^\w+(\.\w+)?@\w+\.(net|com|org)$/.test(email);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -38,24 +34,22 @@ CHALLENGE 3
 Write a function named validatePhoneNumber that accepts a phone number and determines if it is valid.
 
 Acceptable formats include:
- - (555) 555-5555
- - (555)555 5555
- - 555 555-5555
- - 555-5555555
- - 555-555 5555
- - 555-555-5555
- - 555 555 5555
- - 555555-5555
- - 5555555555
+- (555) 555-5555
+- (555)555 5555
+- 555 555-5555
+- 555-5555555
+- 555-555 5555
+- 555-555-5555
+- 555 555 5555
+- 555555-5555
+- 5555555555
 
 Your function should include a single regular expression pattern that matches any of these formats.
 
 Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
-const validatePhoneNumber = (phoneNumber) => {
-  // Solution code here...
-};
+const validatePhoneNumber = phoneNumber => /^(?:\(\d{3}\) ?|\d{3}[- ]?)\d{3}[- ]?\d{4}$/.test(phoneNumber);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4 - Stretch Goal
@@ -66,9 +60,7 @@ For example, findTagNames(['<h1>Hello, world!</h1>', '<p>Welcome to my site</p>'
 findTagNames(['<div><h1>Hello, world!</h1></div>', '<p>Welcome to my site</p>']) returns ['/h1', '/div', '/p'].
 ------------------------------------------------------------------------------------------------ */
 
-const findTagNames = elements => {
-  // Solution code here...
-};
+const findTagNames = elements => elements.map(e => e.match(/(?<=<)\/\w+(?=>)/g)).reduce((a, c) => a.concat(c), []);
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
