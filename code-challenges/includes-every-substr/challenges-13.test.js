@@ -9,7 +9,7 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 ------------------------------------------------------------------------------------------------ */
 
 const firstLetters = (arr) => {
-  return arr.map(string => string.charAt(0));
+  return arr.map(str => str.charAt(0));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -21,7 +21,7 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 ------------------------------------------------------------------------------------------------ */
 
 const findHappiness = (arr) => {
-  return arr.filter(string => string.includes(':)'));
+  return arr.map(str => str.every(str.includes(':)')));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -40,9 +40,7 @@ const standardizePhoneNumbers = (arr) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
-
 Write a function named onlyOddChars that takes in a string and returns only the odd-index characters from that string.
-
 For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
@@ -52,13 +50,13 @@ const onlyOddChars = (str) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
-
 Write a function named allHappy that takes in an array of strings and returns a Boolean indicating whether all those strings contain ":)".
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
   return arr.every(val => val.includes(':)'));
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -72,7 +70,6 @@ const findAnything = (arr, target) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7
-
 Write a function named findEvery that takes in an array of strings, along with a target string. Return a Boolean based on whether or not every string in the array contains the target string.
 ------------------------------------------------------------------------------------------------ */
 
@@ -82,13 +79,9 @@ const findEvery = (arr, target) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8
-
 We've been testing a new course enrollment system, and we think we have the bugs worked out, but in the meantime, Brook enrolled himself in a bunch of different classes to test if it was working.
-
 Write a function named unenrollBrook that takes in a two-dimensional array, where each array represents one course's roster and is an array of strings of the names of the people in that course.
-
 Return a two-dimensional array with the same roster, but where anyone whose name includes Brook is removed from every course.
-
 For example, [['Brook Testing', 'Actual Person'], ['Human Person', 'Brook again', 'still Brook']] returns [['Actual Person'], ['Human Person']]
 ------------------------------------------------------------------------------------------------ */
 
