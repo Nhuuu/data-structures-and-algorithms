@@ -11,10 +11,7 @@ public class ArrayReverse {
     } else {
       int index = 0;
       for ( int i = arr.length - 1; i >= 0; i-- ){
-        if (index == i){
-          break;
-        }
-        if(i - index == 1){
+        if (index == i || (i - index) == 1){
           break;
         }
         int temp = arr[index];
@@ -22,8 +19,8 @@ public class ArrayReverse {
         arr[i] = temp;
         index++;
       }
+      return arr;
     } 
-    return arr;
   }
 }
 
