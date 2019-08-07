@@ -1,3 +1,5 @@
+package code401challenges;
+
 import java.util.Arrays;
 
 public class ArrayReverse {
@@ -25,7 +27,7 @@ public class ArrayReverse {
 }
 
 
-// First solution - pair whiteboarding solution
+// First solution - pair white-boarding solution
 // public static int[] reverseArray(int[] arr){
 //   if (arr.length <= 1) {
 //     return arr;
