@@ -11,4 +11,4 @@ The Big 0 space/time for this is 0(n).
 For the stretch goal of another solution, I instantiated an index variable and a temp variable to swap elements. The time complexity is still 0(n) but the space complexity is 0(1).
 
 ## Solution
-* ![](../assets/day01challenge.jpg)
+* ![](../assets/arrayreverse.jpg)
