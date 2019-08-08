@@ -6,19 +6,21 @@ public class BinarySearch {
     System.out.println(binarySearch(inputArr, 15));
   }
 
-  public static int binarySearch(int[] sortedArr, int target){
-    int midIndex = sortedArr.length/2;
-    while(midIndex < sortedArr.length && midIndex > 0){
-      if(sortedArr[midIndex] == target){
-        return midIndex;
-      } else if(sortedArr[midIndex] < target){
-        midIndex = (midIndex + sortedArr.length)/2;
-      } else if(sortedArr[midIndex] > target){
-        midIndex = midIndex/2;
-      } else {
-        return -1;
+  public static int binarySearch(int[] arr, int target){
+    int minIndex = 0;
+    int maxIndex = arr.length - 1;
+    while(minIndex <= maxIndex ){
+      int guessIndex = (minIndex + maxIndex) / 2;
+      if(arr[guessIndex] == target){
+        return guessIndex;
+      }
+      if(arr[guessIndex] > target){
+        maxIndex = guessIndex - 1;
+      }
+      if(arr[guessIndex] < target){
+        minIndex = guessIndex + 1;
       }
     }
-    return midIndex;
+    return -1;
   }
 }
