@@ -8,21 +8,21 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class BinarySearchTest {
-    @Test public void testBinarySearch() {
-        int[] inputArr = {4,8,15,16,23,42};
-        int target = 15;
-        assertEquals("Index is: ", 2, BinarySearch.binarySearch(inputArr, target));
-    }
+  @Test public void testBinarySearch() {
+    int[] inputArr = {4,8,15,16,23,42};
+    int target = 15;
+    assertEquals("Index is: ", 2, BinarySearch.binarySearch(inputArr, target));
+  }
 
-    @Test public void testBinarySearch_notInArray() {
-        int[] inputArr = {11,22,33,44,55,66,77};
-        int target = 90;
-        assertEquals("Target is not in the array: ", -1, BinarySearch.binarySearch(inputArr, target));
-    }
+  @Test public void testBinarySearch_notInArray() {
+    int[] inputArr = {11,22,33,44,55,66,77};
+    int target = 90;
+    assertEquals("Target is not in the array: ", -1, BinarySearch.binarySearch(inputArr, target));
+  }
 
-    @Test public void testBinarySearch_emptyArray() {
-        int[] inputArr = {};
-        int target = 90;
-        assertEquals("Target is not in the array: ", -1, BinarySearch.binarySearch(inputArr, target));
-    }
+  @Test public void testBinarySearch_emptyArray() {
+    int[] inputArr = {};
+    int target = 90;
+    assertEquals("Target is not in the array: ", -1, BinarySearch.binarySearch(inputArr, target));
+  }
 }
