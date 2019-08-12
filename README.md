@@ -12,5 +12,4 @@ This root README is where the links to daily work should live.
 
 
 ## Data-Structures
-* [Linked Lists](./Data-structures/src/main/java/linkedlist)
-* [Linked Lists Tests](./Data-structures/src/main/java/linkedlist)
+* [Linked Lists](./otherReadmes/LinkedList.md)
