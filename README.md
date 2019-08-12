@@ -9,3 +9,8 @@ This root README is where the links to daily work should live.
 * [Day 1: Reverse an Array](./otherReadmes/ArrayReverse.md)
 * [Day 2: Insert and shift in an Array](./otherReadmes/ArrayShift.md)
 * [Day 3: Binary Search](./otherReadmes/BinarySearch.md)
+
+
+## Data-Structures
+* [Linked Lists](./Data-structures/src/main/java/linkedlist)
+* [Linked Lists Tests](./Data-structures/src/main/java/linkedlist)
