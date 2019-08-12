@@ -17,5 +17,5 @@ Implement a Singly Linked List Data Structure
 * printString()
 
 
-* [Linked Lists](./Data-structures/src/main/java/linkedlist)
-* [Linked Lists Tests](./Data-structures/src/main/java/linkedlist)
+* [Linked Lists](../Data-structures/src/main/java/linkedlist)
+* [Linked Lists Tests](../Data-structures/src/test/java/linkedlist)
