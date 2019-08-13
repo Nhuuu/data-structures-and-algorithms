@@ -31,6 +31,6 @@ public class LinkedListTest {
         LinkedList list = new LinkedList();
         list.insert("a");
         list.insert("b");
-        assertEquals("Returns a string of all values in the linked list.", "HEAD -> a -> b -> null", list.toString());
+        assertEquals("Returns a string of all values in the linked list.", "HEAD -> b -> a -> null", list.toString());
     }
 }
