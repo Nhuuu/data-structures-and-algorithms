@@ -23,3 +23,5 @@ Implement a Singly Linked List Data Structure
 
 * [Linked Lists](../Data-Structures/src/main/java/linkedlist)
 * [Linked Lists Tests](../Data-Structures/src/test/java/linkedlist)
+
+* ![LinkedList whiteboarding](../assets/llinsertions.jpg)
