@@ -5,12 +5,8 @@ public class LinkedList<T> {
   Node <T> current;
   
   public void insert(T value){
-    if(this.head == null){
-      this.head = new Node(value, null);
-      this.current = head;
-      return;
-    }
-    current.next = new Node(value, null);
+    Node <T> current = new Node(value, this.head);
+    this.head = current;
   }
 
   public boolean includes(T value){
