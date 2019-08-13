@@ -5,10 +5,6 @@ package linkedlist;
 
 
 import org.junit.*;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import static org.junit.Assert.*;
 
 
@@ -22,22 +18,19 @@ public class LinkedListTest {
     @Test public void testIncludes_true(){
         LinkedList list = new LinkedList();
         list.insert("Something");
-        assertEquals("Should return boolean true when linked list has the value", true, list.includes("Something"));
+        assertTrue("Should return boolean true when linked list has the value", list.includes("Something"));
     }
 
     @Test public void testIncludes_false(){
         LinkedList list = new LinkedList();
-        assertEquals("Should return boolean false when linked list does not have the value.", false, list.includes(
-            "Something else"));
+        assertFalse("Should return boolean false when linked list does not have the value.", list.includes(
+            "Something"));
     }
 
-    @Test public void testPrintString(){
+    @Test public void testToString(){
         LinkedList list = new LinkedList();
         list.insert("a");
-        list.insert("a");
-        List<String> result = new ArrayList<String>();
-        result.add("a");
-        result.add("a");
-        assertEquals("Returns a string of all values in the linked list.", result, list.printString());
+        list.insert("b");
+        assertEquals("Returns a string of all values in the linked list.", "HEAD -> a -> b -> null", list.toString());
     }
 }
