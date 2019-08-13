@@ -14,8 +14,14 @@ Implement a Singly Linked List Data Structure
 ## API
 * insert() 
 * includes()
-* printString()
+* toString()
+* append()
+* insertBefore()
+* insertAfter()
+
 
 
 * [Linked Lists](../Data-Structures/src/main/java/linkedlist)
 * [Linked Lists Tests](../Data-Structures/src/test/java/linkedlist)
+
+* ![LinkedList whiteboarding](../assets/llinsertions.jpg)
