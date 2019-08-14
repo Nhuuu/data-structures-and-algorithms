@@ -40,8 +40,7 @@ public class LinkedList<T> {
     while(this.current.next != null){
       this.current = current.next;
     }
-    Node <T> newNode = new Node(value, null);
-    current.next = newNode;
+    current.next = new Node(value, null);
   }
 
   public void insertBefore(T value, T target){
@@ -49,12 +48,11 @@ public class LinkedList<T> {
       head = new Node(value, null);
     }
     this.current = head;
-    while(current.next != null){
-      if(current.value == target){
-        Node newNode = new Node(value, current);
-        current.next = newNode;
+    while(current != null) {
+      if(current.next.value == target){
+        current.next = new Node(value, this.current.next);
       }
-      current = current.next;
+      break;
     }
   }
 
@@ -63,11 +61,12 @@ public class LinkedList<T> {
       head = new Node(value, null);
     }
     this.current = head;
-    while(current.next != null){
-      if(current.value == target){
-        Node newNode = new Node(value, current.next);
-        current.next = newNode;
+    while(current != null){
+      if(current.next.value == target){
+        current = current.next;
+        current.next = new Node(value, current.next);
       }
+      break;
     }
   }
 
