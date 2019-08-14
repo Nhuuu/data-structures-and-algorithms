@@ -59,4 +59,20 @@ public class LinkedListTest {
     list.insertAfter(5, 3);
     assertEquals("Test should add value after the target", "HEAD -> 1 -> 3 -> 5 -> 2 -> null", list.toString());
   }
+
+  @Test public void testKthFromEnd(){
+    list.append(1);
+    list.append(3);
+    list.append(2);
+    assertEquals("Test should return value that is position 1 from the end of the linked list", "1",
+        list.kthFromEnd(2));
+  }
+
+  @Test public void testKthFromEnd_notThere(){
+    list.append(1);
+    list.append(3);
+    list.append(2);
+    assertEquals("Test should return value that is position 1 from the end of the linked list", "Not there",
+        list.kthFromEnd(4));
+  }
 }
