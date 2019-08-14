@@ -70,5 +70,22 @@ public class LinkedList<T> {
     }
   }
 
+  public String kthFromEnd(int k){
+    this.current = head;
+    int length = 0;
+    while(this.current != null) {
+      this.current = current.next;
+      length++;
+    }
+    if(length < k){
+      return "Not there";
+    }
+    this.current = head;
+    for(int i = 1; i < length - k; i++){
+      current = current.next;
+    }
+    return current.value.toString();
+  }
+
 }
 
