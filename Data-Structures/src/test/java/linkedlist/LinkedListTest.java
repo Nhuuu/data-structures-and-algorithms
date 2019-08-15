@@ -83,4 +83,15 @@ public class LinkedListTest {
     assertEquals("Test should return value that is position 1 from the end of the linked list", 0,
         actual);
   }
+
+  @Test public void testMergeLists(){
+    list.append(1);
+    list.append(3);
+    LinkedList listTwo = new LinkedList();
+    listTwo.append(5);
+    listTwo.append(9);
+    listTwo.append(4);
+    assertEquals("The two lists should be merged into one", "HEAD -> 1 -> 5 -> 3 -> 9 -> 4 -> null",
+        LinkedList.mergeLists(list, listTwo));
+  }
 }

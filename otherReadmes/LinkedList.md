@@ -19,10 +19,11 @@ Implement a Singly Linked List Data Structure
 * insertBefore()
 * insertAfter()
 * kthFromTheEnd()
-
+* mergeLists()
 
 * [Linked Lists](../Data-Structures/src/main/java/linkedlist)
 * [Linked Lists Tests](../Data-Structures/src/test/java/linkedlist)
 
 * ![LinkedList whiteboarding](../assets/llinsertions.jpg)
 * ![LinkedList whiteboarding](../assets/kth.JPG)
+* ![LinkedList whiteboarding](../assets/llmerge.jpg)
