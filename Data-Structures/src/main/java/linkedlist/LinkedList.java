@@ -1,5 +1,7 @@
 package linkedlist;
 
+import javax.management.RuntimeErrorException;
+
 public class LinkedList<T> {
   Node head;
   Node <T> current;
@@ -43,6 +45,15 @@ public class LinkedList<T> {
     current.next = new Node(value, null);
   }
 
+
+  /*
+  Almost! The `break` statements in the while loops
+  will only let the loops run once. This means that
+  this method only works if the user is trying to insert
+  a value before/after the first or second value in the
+  linked list (I adjusted the tests to confirm).
+   */
+
   public void insertBefore(T value, T target){
     if(head == null){
       head = new Node(value, null);
@@ -50,9 +61,10 @@ public class LinkedList<T> {
     this.current = head;
     while(current != null) {
       if(current.next.value == target){
-        current.next = new Node(value, this.current.next);
+        current.next = new Node(value, current.next);
+        return;
       }
-      break;
+      current = current.next;
     }
   }
 
@@ -65,26 +77,27 @@ public class LinkedList<T> {
       if(current.next.value == target){
         current = current.next;
         current.next = new Node(value, current.next);
+        return;
       }
-      break;
+      current = current.next;
     }
   }
 
-  public String kthFromEnd(int k){
+  public T kthFromEnd(int k) {
     this.current = head;
     int length = 0;
-    while(this.current != null) {
+    while (this.current != null) {
       this.current = current.next;
       length++;
     }
-    if(length < k){
-      return "Not there";
+    if (length < k || k < 0) {
+      throw new IllegalArgumentException("k position doesn't exist in the list");
     }
     this.current = head;
-    for(int i = 1; i < length - k; i++){
+    for (int i = 1; i < length - k; i++) {
       current = current.next;
     }
-    return current.value.toString();
+    return current.value;
   }
 
 }

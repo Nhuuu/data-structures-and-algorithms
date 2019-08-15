@@ -48,16 +48,22 @@ public class LinkedListTest {
     list.append(1);
     list.append(3);
     list.append(2);
-    list.insertBefore(5,3);
-    assertEquals("Test should add a value before the target", "HEAD -> 1 -> 5 -> 3 -> 2 -> null", list.toString());
+    list.append(8);
+    list.append(9);
+    list.insertBefore(5,8);
+    assertEquals("Test should add a value before the target", "HEAD -> 1 -> 3 -> 2 -> 5 -> 8 -> 9 -> null",
+        list.toString());
   }
 
   @Test public void testInsertAfter(){
     list.append(1);
     list.append(3);
     list.append(2);
-    list.insertAfter(5, 3);
-    assertEquals("Test should add value after the target", "HEAD -> 1 -> 3 -> 5 -> 2 -> null", list.toString());
+    list.append(8);
+    list.append(9);
+    list.insertAfter(5, 8);
+    assertEquals("Test should add value after the target", "HEAD -> 1 -> 3 -> 2 -> 8 -> 5 -> 9 -> null",
+        list.toString());
   }
 
   @Test public void testKthFromEnd(){
@@ -68,11 +74,13 @@ public class LinkedListTest {
         list.kthFromEnd(2));
   }
 
-  @Test public void testKthFromEnd_notThere(){
+  @Test (expected=IllegalArgumentException.class)
+  public void testKthFromEnd_outOfBounds(){
     list.append(1);
     list.append(3);
     list.append(2);
-    assertEquals("Test should return value that is position 1 from the end of the linked list", "Not there",
-        list.kthFromEnd(4));
+    String actual = (String) list.kthFromEnd(-1);
+    assertEquals("Test should return value that is position 1 from the end of the linked list", 0,
+        actual);
   }
 }
