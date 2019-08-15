@@ -91,5 +91,22 @@ public class LinkedList<T> {
     return current.value;
   }
 
+  public static LinkedList mergeLists(LinkedList one, LinkedList two){
+    Node listOne = one.head;
+    Node listTwo = two.head;
+    Node oneNext; Node twoNext;
+    while(listOne != null && listTwo != null){
+      oneNext = listOne.next;
+      twoNext = listTwo.next;
+
+      listOne.next = listTwo;
+      listTwo.next = oneNext;
+
+      listOne = oneNext;
+      listTwo = twoNext;
+    }
+    return one;
+  }
+
 }
 
