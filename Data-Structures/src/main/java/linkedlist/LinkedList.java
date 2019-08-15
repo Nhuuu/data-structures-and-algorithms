@@ -45,15 +45,6 @@ public class LinkedList<T> {
     current.next = new Node(value, null);
   }
 
-
-  /*
-  Almost! The `break` statements in the while loops
-  will only let the loops run once. This means that
-  this method only works if the user is trying to insert
-  a value before/after the first or second value in the
-  linked list (I adjusted the tests to confirm).
-   */
-
   public void insertBefore(T value, T target){
     if(head == null){
       head = new Node(value, null);
