@@ -64,7 +64,7 @@ public class LinkedListTest {
     list.append(1);
     list.append(3);
     list.append(2);
-    assertEquals("Test should return value that is position 1 from the end of the linked list", "1",
+    assertEquals("Test should return value that is position 1 from the end of the linked list", 1,
         list.kthFromEnd(2));
   }
 
