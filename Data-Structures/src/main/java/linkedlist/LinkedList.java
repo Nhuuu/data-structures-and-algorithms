@@ -3,6 +3,7 @@ package linkedlist;
 import javax.management.RuntimeErrorException;
 
 public class LinkedList<T> {
+
   Node head;
   Node <T> current;
 
@@ -95,15 +96,22 @@ public class LinkedList<T> {
     Node listOne = one.head;
     Node listTwo = two.head;
     Node oneNext; Node twoNext;
+
     while(listOne != null && listTwo != null){
+
       oneNext = listOne.next;
       twoNext = listTwo.next;
 
       listOne.next = listTwo;
-      listTwo.next = oneNext;
+      if(oneNext == null){
+        oneNext = listTwo.next.next;
+      } else {
+        listTwo.next = oneNext;
+      }
 
       listOne = oneNext;
       listTwo = twoNext;
+
     }
     return one;
   }
