@@ -13,3 +13,4 @@ This root README is where the links to daily work should live.
 
 ## Data-Structures
 * [Linked Lists](./otherReadmes/LinkedList.md)
+* [Stacks and Queues](./otherReadmes/StacksAndQueues.md)
