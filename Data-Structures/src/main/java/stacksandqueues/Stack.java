@@ -4,36 +4,31 @@ public class Stack<T> {
   Node<T> top;
 
   public Stack() {
+    this.top = null;
   }
 
   public void push(T value) {
-    Node <T> temp;
-    if (top == null){
-      top = new Node(value, null);
-    }
-    else {
-      temp = top;
-      top = new Node(value, temp);
-    }
+    Node <T> temp = top;
+    this.top = new Node(value, temp);
   }
 
   public T pop() {
     Node <T> temp;
-    if(top == null){
+    if(this.top == null){
       throw new NullPointerException("Stack is empty");
     } else {
-      temp = top;
-      top = top.next;
+      temp = this.top;
+      this.top = this.top.next;
       temp.next = null;
     }
-    return temp.value;
+    return temp.getValue();
   }
 
   public T peek() {
-    if(top == null){
+    if(this.top == null){
       throw new NullPointerException("Stack is empty");
     } else {
-      return top.value;
+      return this.top.getValue();
     }
   }
 

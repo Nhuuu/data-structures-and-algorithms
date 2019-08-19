@@ -18,7 +18,7 @@ public class StackTest {
   @Test
   public void testPushToStack(){
     stack.push(5);
-    assertEquals("Stack should have a node with value of 5", 5, stack.top.value);
+    assertEquals("Stack should have a node with value of 5", 5, stack.top.getValue());
   }
 
   @Test

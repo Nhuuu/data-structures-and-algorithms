@@ -21,7 +21,7 @@ public class QueueTest {
   @Test
   public void testEnqueue(){
     queue.enqueue(5);
-    assertEquals("Stack should have a node with value of 5", 5, queue.front.value);
+    assertEquals("Stack should have a node with value of 5", 5, queue.front.getValue());
   }
 
   @Test
@@ -49,7 +49,7 @@ public class QueueTest {
     queue.enqueue(5);
     queue.enqueue(4);
     queue.dequeue();
-    assertEquals("Should now have one front node", 4, queue.front.value);
+    assertEquals("Should now have one front node", 4, queue.front.getValue());
   }
 
   @Test
