@@ -1,34 +1,39 @@
 package stacksandqueues;
 
-/*
-Create a Queue class that has a front property.
-It creates an empty Queue when instantiated.
-This object should be aware of a default empty value
-assigned to front when the queue is created.
- */
-
-public class Queue {
-  Node front;
-
-  public Queue(Node front) {
-    this.front = front;
+public class Queue<T> {
+  Node<T> front;
+  Node<T> rear;
+  public Queue() {
   }
 
-  //Define a method called enqueue which takes any value
-  //as an argument and adds a new node with that value
-  //to the back of the queue with an O(1) Time performance.
+  public void enqueue(T value) {
+    Node<T> newNode = new Node(value, null);
+    if(rear == null) {
+      front = newNode;
+      rear = newNode;
+    } else {
+      rear.next = newNode;
+      rear = newNode;
+    }
+  }
 
+  public T dequeue() {
+    Node<T> temp;
+    if(front == null) {
+      throw new NullPointerException("Queue is empty");
+    } else {
+      temp = front;
+      front = front.next;
+      temp.next = null;
+    }
+    return temp.value;
+  }
 
-
-  //Define a method called dequeue that does not take any argument,
-  //removes the node from the front of the queue, and returns the node’s value.
-
-
-
-  //Define a method called peek that does not take an argument
-  //and returns the value of the node located in the front of the queue,
-  //without removing it from the queue.
-
-
+  public T peek() {
+    if(front == null) {
+      throw new NullPointerException("Queue is empty");
+    }
+    return front.value;
+  }
 
 }

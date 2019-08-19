@@ -36,5 +36,5 @@ public class Stack<T> {
       return top.value;
     }
   }
-  
+
 }
