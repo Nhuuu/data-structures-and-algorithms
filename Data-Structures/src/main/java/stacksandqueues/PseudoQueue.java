@@ -10,8 +10,7 @@ public class PseudoQueue<T> {
   }
 
   public void enqueue(T value) {
-    Node<T> newNode = new Node(value);
-    this.firstStack.push((T) newNode);
+    this.firstStack.push(value);
   }
 
   public T dequeue() {
