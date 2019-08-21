@@ -4,14 +4,14 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class AnimalShelter<T> {
-  List<Animal> animals;
+//  List<Animal> animals;
   Node<T> front;
   Node<T> rear;
 
   public AnimalShelter(){
     this.front = null;
     this.rear = null;
-    this.animals = new LinkedList<>();
+//    this.animals = new LinkedList<>();
   }
 
   public void enqueue(Animal animal){
@@ -25,15 +25,15 @@ public class AnimalShelter<T> {
     }
   }
 
-  public Animal dequeue(Animal pref){
-    Animal firstAnimal;
-    if(pref.equals("dog")){
-//      firstAnimal =
-    } else if (pref.equals("cat")){
-//      firstAnimal
-    } else {
-      return null;
-    }
-  }
+//  public Animal dequeue(Animal pref){
+//    Animal firstAnimal;
+//    if(pref.equals("dog")){
+////      firstAnimal =
+//    } else if (pref.equals("cat")){
+////      firstAnimal
+//    } else {
+//      return null;
+//    }
+//  }
 
 }

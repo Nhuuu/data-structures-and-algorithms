@@ -17,10 +17,17 @@ public class AnimalShelterTest {
     Dog abby = new Dog("Abby", "Belgian Malinois", 9);
     Cat peaches = new Cat("Peaches", "Tabby", 10);
     Cat tilly = new Cat("Tilly", "Tabby", 10);
-    assertEquals("Should add Abby to the queue", "Abby", AnimalShelter.enqueue(abby));
+    animalShelter.enqueue(abby);
+    assertEquals("Should add Abby to the queue", abby, animalShelter.front.getValue());
   }
 
   @Test
   public void dequeue() {
+    Dog abby = new Dog("Abby", "Belgian Malinois", 9);
+    Cat peaches = new Cat("Peaches", "Tabby", 10);
+    Cat tilly = new Cat("Tilly", "Tabby", 10);
+    animalShelter.enqueue(abby);
+    animalShelter.enqueue(peaches);
+    animalShelter.enqueue(tilly);
   }
 }
