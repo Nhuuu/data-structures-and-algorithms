@@ -7,7 +7,7 @@ enqueue(animal): adds animal to the shelter. animal can be either a dog or a cat
 dequeue(pref): returns either a dog or a cat. If pref is not "dog" or "cat" then return null.
 
 ## Approach & Efficiency
-<!-- My approach was two use the first stack for the enqueue method to add new nodes to. Then when it was time to dequeue, the nodes from the first stack would get popped off and pushed into the new stack. Creating a FIFO flow upon dequeue. My method for adding a node to the queue(enqueue) has a Big O time/space complexity of O(1), however my dequeue method has a time of O(n) and space of O(1). -->
+My approach was to use to create a superclass of animals that the dog and cat classes would extend to. Then create an animalshelter class that would hold all of the animals in a queue. The enqueue method would add new nodes with values of an animal. Then when it was time to dequeue, the method would go through starting from the front to check if the preferred animal matches and dequeue that animal. My method for adding a node to the queue(enqueue) has a Big O time/space complexity of O(1), however my dequeue method has a time of O(n) and space of O(1).
 
 ## API
 * enqueue()
