@@ -25,15 +25,16 @@ public class AnimalShelter<T> {
     }
   }
 
-//  public Animal dequeue(Animal pref){
-//    Animal firstAnimal;
-//    if(pref.equals("dog")){
-////      firstAnimal =
-//    } else if (pref.equals("cat")){
-////      firstAnimal
-//    } else {
-//      return null;
-//    }
-//  }
+  public Animal dequeue(String pref){
+    if(pref.equals("dog")){
+      Node<T> temp;
+    } else if(pref.equals("cat")){
+      while(this.front.value != Cat){
+
+      }
+    } else {
+      return null;
+    }
+  }
 
 }
