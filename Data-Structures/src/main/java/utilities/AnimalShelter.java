@@ -1,36 +1,29 @@
 package utilities;
 
-import java.util.LinkedList;
-import java.util.List;
+import stacksandqueues.Queue;
 
 public class AnimalShelter<T> {
-  List<Animal> animals;
-  Node<T> front;
-  Node<T> rear;
+  Queue<Dog> dogQueue;
+  Queue<Cat> catQueue;
 
   public AnimalShelter(){
-    this.front = null;
-    this.rear = null;
-    this.animals = new LinkedList<>();
+    this.dogQueue = new Queue<>();
+    this.catQueue = new Queue<>();
   }
 
   public void enqueue(Animal animal){
-    Node<T> newNode = new Node(animal);
-    if(this.rear == null) {
-      this.front = newNode;
-      this.rear = newNode;
+    if(animal.getClass() == Dog.class){
+      dogQueue.enqueue((Dog) animal);
     } else {
-      this.rear.next = newNode;
-      this.rear = newNode;
+      catQueue.enqueue((Cat) animal);
     }
   }
 
-  public Animal dequeue(Animal pref){
-    Animal firstAnimal;
-    if(pref.equals("dog")){
-//      firstAnimal =
-    } else if (pref.equals("cat")){
-//      firstAnimal
+  public <x> x dequeue(Class<x> pref){
+    if(pref.equals(Dog.class)){
+      return pref.cast(dogQueue.dequeue());
+    } else if(pref.equals(Cat.class)){
+      return pref.cast(catQueue.dequeue());
     } else {
       return null;
     }
