@@ -16,4 +16,4 @@ My approach was to use to create a superclass of animals that the dog and cat cl
 * [FIFO Animal Shelter](../Data-Structures/src/main/java/utilities)
 * [FIFO Animal Shelter Tests](../Data-Structures/src/test/java/utilities)
 
-* ![FIFO Animal Shelter whiteboarding](../assets/animalshelter.jpg)
+* ![FIFO Animal Shelter whiteboarding](../assets/fifoanimalshelter.jpg)
