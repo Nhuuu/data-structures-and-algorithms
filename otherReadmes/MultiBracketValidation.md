@@ -8,10 +8,10 @@ Square Brackets : []
 Curly Brackets : {}
 
 ## Approach & Efficiency
-<!-- These methods are all Big O(1) for space and time because we are just adding one node at a time or removing one node at a time. Approach was to reassign properties to the nodes so that it makes sense. (For stacks, reassigning the top node property. For queues, reassigning the front and rear node properties.) -->
+Used a stack to hold opening brackets and popped them off the stack when the corresponding closing bracket was found. If the closing brakcet did not match the top node in the stack, then the method would return false. If the stack is not empty in the end after iterating through the entire string input, it would also return false. This operates with a time and space complexity of O(n).
 
 ## API
-...
+* validate()
 
 * [Multi Bracket Validation Code](../Data-Structures/src/main/java/utilities)
 * [Multi Bracket Validation  Tests](../Data-Structures/src/test/java/utilities)
