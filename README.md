@@ -17,3 +17,4 @@ This root README is where the links to daily work should live.
 * [PseudoQueue](./otherReadmes/PseudoQueue.md)
 * [FIFO Animal Shelter](./otherReadmes/FifoAnimalShelter.md)
 * [Multi Bracket Validation](./otherReadmes/MultiBracketValidation.md)
+* [Binary Search Tree](./otherReadmes/BinarySearchTree.md)
