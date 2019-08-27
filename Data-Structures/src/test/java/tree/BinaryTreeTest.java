@@ -18,6 +18,11 @@ public class BinaryTreeTest {
   public void setUp(){
     tree = new BinaryTree();
 
+    //       6
+    //     /   \
+    //    4    10
+    //   /  \ /
+    //  1   5 7
     Node nodes = new Node<>(6,
         new Node<>(4,
             new Node<>(1),
@@ -27,6 +32,12 @@ public class BinaryTreeTest {
     tree2 = new BinaryTree(nodes);
 
     searchTree = new BinarySearchTree();
+
+    //       3
+    //     /   \
+    //   20    15
+    //   /  \ /
+    //  1   5 7
 
     Node<Object> nodes2 = new Node<>(3,
         new Node<>(20,
@@ -86,8 +97,8 @@ public class BinaryTreeTest {
 
   @Test
   public void testFizzBuzz(){
-    BinaryTree t = FizzBuzzTree.fizzBuzzTree(f); // (3,1,20,5,7,15)
-    ArrayList<Object> test = new ArrayList<>(Arrays.asList("fizz",4,"buzz","buzz",7,"fizzbuzz"));
+    BinaryTree t = FizzBuzzTree.fizzBuzzTree(f); // inOrder => ( 1,20,5,3,7,15)
+    ArrayList<Object> test = new ArrayList<>(Arrays.asList(1,"Buzz","Buzz","Fizz",7,"FizzBuzz"));
     assertEquals(test, t.inOrder(t.root));
   }
 

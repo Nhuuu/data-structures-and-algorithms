@@ -3,7 +3,11 @@ package tree;
 public class FizzBuzzTree {
 
   public static BinaryTree<Object> fizzBuzzTree(BinaryTree<Object> inputTree) {
-    Node current = inputTree.root;
+    fizzBuzz(inputTree.root);
+    return inputTree;
+  }
+
+  private static void fizzBuzz(Node<Object> current){
     if (current != null) {
       if ((int)current.value % 15 == 0) {
         current.value = "FizzBuzz";
@@ -12,9 +16,8 @@ public class FizzBuzzTree {
       } else if ((int)current.value % 3 == 0) {
         current.value = "Fizz";
       }
-      fizzBuzzTree(current.left);
-      fizzBuzzTree(current.right);
+      fizzBuzz(current.left);
+      fizzBuzz(current.right);
     }
-    return inputTree;
   }
 }
