@@ -95,6 +95,11 @@ public class BinaryTreeTest {
     assertTrue((int)searchTree.root.value == 1);
   }
 
+  // multiple adds
+
+  // contains test
+
+
   @Test
   public void testFizzBuzz(){
     BinaryTree t = FizzBuzzTree.fizzBuzzTree(f); // inOrder => ( 1,20,5,3,7,15)
