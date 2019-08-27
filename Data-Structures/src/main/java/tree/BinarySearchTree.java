@@ -1,33 +1,37 @@
 package tree;
 
-import java.util.ArrayList;
 
-public class BinarySearchTree {
-  Node root;
-  ArrayList<Integer> br = new ArrayList<>();
-
+public class BinarySearchTree<T> extends BinaryTree {
   public BinarySearchTree(){
-    this.root = null;
+    super();
   };
 
-  public void add(int value){
-    Node current = this.root;
-    if(current == null){
-      this.root = new Node(value);
-    } else if(value < current.value){
-      while(current.left != null){
-        current = current.left;
+  public void add(T value) {
+    if (this.root == null) {
+      this.root = new Node<>(value);
+    } else {
+      Node<T> current = this.root;
+      while (current != null) {
+        if ((int)value < (int)current.value) {
+          if (current.left == null) {
+            current.left = new Node(value, current, null);
+            return;
+          } else {
+            current = current.left;
+          }
+        } else {
+          if (current.right == null) {
+            current.right = new Node(value);
+          } else {
+            current = current.right;
+          }
+        }
       }
-      current.left = new Node(value, current, null);
-    } else if(value > current.value){
-      while(current.right != null){
-        current = current.right;
-      }
-      current.right = new Node(value, current, null);
     }
   }
 
-  // Whether or not the value is in the tree at least once.
+
+//   Whether or not the value is in the tree at least once.
 //  public boolean contains(int value){
 //
 //  }

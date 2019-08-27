@@ -2,72 +2,63 @@ package tree;
 
 import java.util.ArrayList;
 
-public class BinaryTree {
-  Node root;
-  ArrayList<Integer> br = new ArrayList<>();
+public class BinaryTree<T> {
+  Node<T> root;
 
   public BinaryTree(){
     this.root = null;
   }
 
-  // breadth traversal to add
-//  public int add(int value){
-//    Node current = this.root;
-//    Node left; Node right;
-//    if(this.root == null){
-//      this.root = new Node(value);
-//    } else {
-//      left = current.left;
-//      right = current.right;
-//      while(current != null){
-//        if(left == null) {
-//          left = new Node(value);
-//          current = left;
-//        } else if(right == null){
-//          right = new Node(value);
-//          current = right;
-//        } else {
-//          current = current.left;
-//        }
-//      }
-//    }
-//    return current.getValue();
-//  }
+  public BinaryTree(Node<T> root){
+    this.root = root;
+  }
 
-  // left, right, root
-  public ArrayList<Integer> preOrder(Node root){
-    br.add(root.value);
-    if(root.left != null){
-      preOrder(root.left);
+  // root, left, right
+  public ArrayList<T> preOrder(Node<T> current){
+    if(current == null){
+      return new ArrayList<T>();
+    } else {
+      ArrayList<T> left = inOrder(current.left);
+      ArrayList<T> right = inOrder(current.right);
+
+      ArrayList<T> result = new ArrayList<>();
+      result.add(current.value);
+      result.addAll(left);
+      result.addAll(right);
+      return result;
     }
-    if (root.right != null){
-      preOrder(root.right);
-    }
-    return br;
   }
 
   // left, root, right
-  public ArrayList<Integer> inOrder(Node root){
-    if(root.left != null){
-      inOrder(root.left);
+  public ArrayList<T> inOrder(Node<T> current){
+    if(current == null){
+      return new ArrayList<T>();
+    } else {
+      ArrayList<T> left = inOrder(current.left);
+      ArrayList<T> right = inOrder(current.right);
+
+      ArrayList<T> result = new ArrayList<>();
+      result.addAll(left);
+      result.add(current.value);
+      result.addAll(right);
+      return result;
     }
-    br.add(root.value);
-    if(root.right != null){
-      inOrder(root.right);
-    }
-    return br;
   }
 
   // left, right, root
-  public ArrayList<Integer> postOrder(Node root){
-    if(root.left != null){
-      postOrder(root.left);
+  public ArrayList<T> postOrder(Node<T> current){
+    if(current == null){
+      return new ArrayList<T>();
+    } else {
+      ArrayList<T> left = inOrder(current.left);
+      ArrayList<T> right = inOrder(current.right);
+
+      ArrayList<T> result = new ArrayList<>();
+      result.addAll(left);
+      result.addAll(right);
+      result.add(current.value);
+      return result;
     }
-    if(root.right != null){
-      postOrder(root.right);
-    }
-    br.add(root.value);
-    return br;
   }
 
 }

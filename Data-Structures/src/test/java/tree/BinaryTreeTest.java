@@ -11,11 +11,31 @@ import static org.junit.Assert.*;
 public class BinaryTreeTest {
 
   BinaryTree tree;
+  BinaryTree tree2;
   BinarySearchTree searchTree;
+  BinaryTree f;
   @Before
   public void setUp(){
     tree = new BinaryTree();
+
+    Node nodes = new Node<>(6,
+        new Node<>(4,
+            new Node<>(1),
+            new Node<>(5)),
+        new Node<>(10,
+            new Node<>(7), null));
+    tree2 = new BinaryTree(nodes);
+
     searchTree = new BinarySearchTree();
+
+    Node<Object> nodes2 = new Node<>(3,
+        new Node<>(20,
+            new Node<>(1),
+            new Node<>(5)),
+        new Node<>(15,
+            new Node<>(7), null));
+    BinaryTree t = new BinaryTree(nodes);
+    f = new BinaryTree(nodes2);
   }
 
   @Test
@@ -30,77 +50,45 @@ public class BinaryTreeTest {
 
   @Test
   public void testBinaryTreeRootNode(){
-    tree.root = new Node(5);
-    assertTrue(tree.root.getValue() == 5);
+    assertTrue((int)tree2.root.getValue() == 6);
   }
 
   @Test
   public void testAddLeftAndRightChildNodes(){
-    tree.root = new Node(5);
-    tree.root.left = new Node(4);
-    tree.root.right = new Node(6);
-    assertTrue(tree.root.left.getValue() == 4);
-    assertTrue(tree.root.right.getValue() == 6);
+    assertTrue((int)tree2.root.left.getValue() == 4);
+    assertTrue((int)tree2.root.right.getValue() == 10);
   }
 
   @Test
   public void testPreOrderTraversal(){
-    Node root = new Node(6);
-    root.left = new Node(4);
-    root.right = new Node(10);
-    Node node4 = root.left;
-    Node node10 = root.right;
-    node4.left = new Node(1);
-    node4.right = new Node(5);
-    node10.left = new Node(7);
-    ArrayList<Integer> test = new ArrayList<>(Arrays.asList(6,4,1,5,10,7));
-    ArrayList result = tree.preOrder(root);
+    ArrayList<Integer> test = new ArrayList<>(Arrays.asList(6,1,4,5,7,10));
+    ArrayList result = tree2.preOrder(tree2.root);
     assertEquals(test, result);
   }
 
   @Test
   public void testInOrderTraversal(){
-    Node root = new Node(6);
-    root.left = new Node(4);
-    root.right = new Node(10);
-    Node node4 = root.left;
-    Node node10 = root.right;
-    node4.left = new Node(1);
-    node4.right = new Node(5);
-    node10.left = new Node(7);
     ArrayList<Integer> test = new ArrayList<>(Arrays.asList(1,4,5,6,7,10));
-    assertEquals(test, tree.inOrder(root));
+    assertEquals(test, tree2.inOrder(tree2.root));
   }
 
   @Test
   public void testPostOrderTraversal(){
-    Node root = new Node(6);
-    root.left = new Node(4);
-    root.right = new Node(10);
-    Node node4 = root.left;
-    Node node10 = root.right;
-    node4.left = new Node(1);
-    node4.right = new Node(5);
-    node10.left = new Node(7);
-    ArrayList<Integer> test = new ArrayList<>(Arrays.asList(1,5,4,7,10,6));
-    assertEquals(test, tree.postOrder(root));
+    ArrayList<Integer> test = new ArrayList<>(Arrays.asList(1,4,5,7,10,6));
+    assertEquals(test, tree2.postOrder(tree2.root));
   }
 
   @Test
   public void testBinarySearchTree_addRoot(){
     searchTree.add(1);
-    assertTrue(searchTree.root.value == 1);
+    assertTrue((int)searchTree.root.value == 1);
   }
 
   @Test
-  public void testBinarySearchTree_addMultiple(){
-    searchTree.add(1);
-    searchTree.add(2);
-    searchTree.add(3);
-    assertTrue(searchTree.root.value == 1);
-//    assertTrue(searchTree.root.left.value == 2);
-    assertEquals(2, searchTree.root.left.value);
-//    assertTrue(searchTree.root.right.value == 3);
+  public void testFizzBuzz(){
+    BinaryTree t = FizzBuzzTree.fizzBuzzTree(f); // (3,1,20,5,7,15)
+    ArrayList<Object> test = new ArrayList<>(Arrays.asList("fizz",4,"buzz","buzz",7,"fizzbuzz"));
+    assertEquals(test, t.inOrder(t.root));
   }
 
 }
