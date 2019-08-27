@@ -9,10 +9,12 @@
 * Return the tree with its new values.
 
 ## Approach & Efficiency
-<!-- Used a stack to hold opening brackets and popped them off the stack when the corresponding closing bracket was found. If the closing brakcet did not match the top node in the stack, then the method would return false. If the stack is not empty in the end after iterating through the entire string input, it would also return false. This operates with a time and space complexity of O(n). -->
+Approach is to write out the regular fizzbuzz conditionals and provide a starting node as root. Then worked through the tree using recursion to change the values. This has a time complexity of O(n) and space of O(1).
 
 ## API
 * fizzBuzzTree()
+* fizzBuzz()
+
 
 
 * [FizzBuzz Tree Code](../Data-Structures/src/main/java/tree)
