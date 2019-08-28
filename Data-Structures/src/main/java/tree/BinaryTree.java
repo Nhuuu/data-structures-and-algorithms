@@ -1,5 +1,6 @@
 package tree;
 
+import stacksandqueues.Queue;
 import java.util.ArrayList;
 
 public class BinaryTree<T> {
@@ -60,5 +61,23 @@ public class BinaryTree<T> {
       return result;
     }
   }
+
+  public ArrayList<T> breadthFirst(){
+    ArrayList<T> ans = new ArrayList<>();
+    Queue<T> q = new Queue();
+    Node<T> current = this.root;
+    while(current != null){
+      q.enqueue(current.value);
+      ans.add(q.dequeue());
+      if(current.left != null){
+        q.enqueue(current.left.value);
+      }
+      if(current.right != null){
+        q.enqueue(current.right.value);
+      }
+    }
+    return ans;
+  }
+
 
 }
