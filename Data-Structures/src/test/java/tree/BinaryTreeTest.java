@@ -102,9 +102,16 @@ public class BinaryTreeTest {
 
   @Test
   public void testFizzBuzz(){
-    BinaryTree t = FizzBuzzTree.fizzBuzzTree(f); // inOrder => ( 1,20,5,3,7,15)
+    BinaryTree t = FizzBuzzTree.fizzBuzzTree(f); // inOrder => (1,20,5,3,7,15)
     ArrayList<Object> test = new ArrayList<>(Arrays.asList(1,"Buzz","Buzz","Fizz",7,"FizzBuzz"));
     assertEquals(test, t.inOrder(t.root));
+  }
+
+  @Test
+  public void testBreadthFirst(){
+    tree.breadthFirst();
+    ArrayList<Integer> test = new ArrayList<>(Arrays.asList(6,4,10,1,5,7));
+    assertEquals(test, tree.breadthFirst());
   }
 
 }
