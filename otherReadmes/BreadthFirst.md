@@ -4,7 +4,7 @@
 Write a breadth first traversal method which takes a Binary Tree as its unique input. Without utilizing any of the built-in methods available to your language, traverse the input tree using a Breadth-first approach; print every visited node’s value.
 
 ## Approach & Efficiency
-<!-- First find the middle point of the sorted array. Check to see if the array at the middle index is equal to the target, if so, return, if the middle point is higher than the target, set the new middle index to be inbetween the old middle index and the end of the sorted array. If the target is lower than the value at the middle index, find the midpoint between the target and the beginning of the array. Do these steps until you find the target. This is O(log n). -->
+I used a Queue to store node values to then add to an arraylist. Enqueue-ing the current node, it's children nodes and then dequeueing the first node in the queue. This allows me to then have the current node as the next front node and add it's children to the queue. Dequeueing as children nodes are added to the queue and adding them to the arraylist to be printed out. Time and space complexity of O(n).
 
 ## Solution
 
