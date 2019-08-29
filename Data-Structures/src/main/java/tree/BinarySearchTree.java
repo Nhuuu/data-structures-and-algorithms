@@ -6,6 +6,7 @@ public class BinarySearchTree<T> extends BinaryTree {
     super();
   };
 
+  // TODO:
   public void add(T value) {
     if (this.root == null) {
       this.root = new Node<>(value);
@@ -30,7 +31,7 @@ public class BinarySearchTree<T> extends BinaryTree {
     }
   }
 
-
+  // TODO:
 //   Whether or not the value is in the tree at least once.
 //  public boolean contains(int value){
 //

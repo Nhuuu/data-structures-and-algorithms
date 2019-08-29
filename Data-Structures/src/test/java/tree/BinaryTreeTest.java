@@ -107,17 +107,26 @@ public class BinaryTreeTest {
     assertEquals(test, t.inOrder(t.root));
   }
 
+  // TODO:
   @Test
   public void testBreadthFirst(){
-    tree.breadthFirst();
     ArrayList<Integer> test = new ArrayList<>(Arrays.asList(6,4,10,1,5,7));
+    assertEquals(test, tree2.breadthFirst());
+  }
+
+  @Test
+  public void testBreadthFirst_emptyTree(){
+    ArrayList<Integer> test = new ArrayList<>(Arrays.asList());
     assertEquals(test, tree.breadthFirst());
   }
 
-  // test breadthfirst empty tree
+  @Test
+  public void testFindMaxValue(){
+    assertEquals(10, tree2.findMaxValue(tree2.root));
+  }
 
-  // Test find max value
-
-  // Test empty tree
-
+  @Test
+  public void testFindMax_emptyTree(){
+    assertEquals(-1, tree.findMaxValue(tree.root));
+  }
 }

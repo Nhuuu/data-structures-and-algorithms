@@ -62,22 +62,31 @@ public class BinaryTree<T> {
     }
   }
 
-  public ArrayList<T> breadthFirst(){
-    ArrayList<T> ans = new ArrayList<>();
-    Queue<T> q = new Queue();
-    Node<T> current = this.root;
-    while(current != null){
-      q.enqueue(current.value);
+  // TODO:
+  public ArrayList<Node> breadthFirst(){
+    ArrayList<Node> ans = new ArrayList<>();
+    Queue<Node> q = new Queue();
+    q.enqueue(this.root);
+    while(!ans.isEmpty()){
+      Node current = q.dequeue();
+      ans.add(current);
       if(current.left != null){
-        q.enqueue(current.left.value);
+        q.enqueue(current.left);
       }
       if(current.right != null){
-        q.enqueue(current.right.value);
+        q.enqueue(current.right);
       }
-      ans.add(q.dequeue());
     }
     return ans;
   }
 
+  public int findMaxValue(Node root){
+    int max = -1;
+    if(root == null) return max;
+    max = (int)root.value;
+    max = findMaxValue(root.left) > max ? findMaxValue(root.left) : max;
+    max = findMaxValue(root.right) > max ? findMaxValue(root.right) : max;
+    return max;
+  }
 
 }
