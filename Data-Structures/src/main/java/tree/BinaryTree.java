@@ -68,13 +68,13 @@ public class BinaryTree<T> {
     Node<T> current = this.root;
     while(current != null){
       q.enqueue(current.value);
-      ans.add(q.dequeue());
       if(current.left != null){
         q.enqueue(current.left.value);
       }
       if(current.right != null){
         q.enqueue(current.right.value);
       }
+      ans.add(q.dequeue());
     }
     return ans;
   }

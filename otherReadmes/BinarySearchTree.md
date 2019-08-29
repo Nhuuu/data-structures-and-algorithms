@@ -23,4 +23,3 @@
 * [Binary Search Tree Code](../Data-Structures/src/main/java/tree)
 * [Binary Search Tree Tests](../Data-Structures/src/test/java/tree)
 
-* ![Binary Search Tree whiteboarding](../assets/binarysearchtree.jpg)

@@ -114,4 +114,10 @@ public class BinaryTreeTest {
     assertEquals(test, tree.breadthFirst());
   }
 
+  // test breadthfirst empty tree
+
+  // Test find max value
+
+  // Test empty tree
+
 }

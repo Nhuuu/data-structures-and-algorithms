@@ -9,7 +9,7 @@
 * Return the tree with its new values.
 
 ## Approach & Efficiency
-Approach is to write out the regular fizzbuzz conditionals and provide a starting node as root. Then worked through the tree using recursion to change the values. This has a time complexity of O(n) and space of O(1).
+Approach is to write out the regular fizzbuzz conditionals and provide a starting node as root. Then worked through the tree using recursion to change the values. This has a time complexity of O(n) and space of O(n).
 
 ## API
 * fizzBuzzTree()
