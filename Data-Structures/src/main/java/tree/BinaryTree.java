@@ -1,49 +1,92 @@
 package tree;
 
+import stacksandqueues.Queue;
 import java.util.ArrayList;
 
-public class BinaryTree {
-  Node root;
-  ArrayList<Integer> br = new ArrayList<>();
+public class BinaryTree<T> {
+  Node<T> root;
 
   public BinaryTree(){
     this.root = null;
   }
 
-  // left, right, root
-  public ArrayList<Integer> preOrder(Node root){
-    br.add(root.value);
-    if(root.left != null){
-      preOrder(root.left);
+  public BinaryTree(Node<T> root){
+    this.root = root;
+  }
+
+  // root, left, right
+  public ArrayList<T> preOrder(Node<T> current){
+    if(current == null){
+      return new ArrayList<T>();
+    } else {
+      ArrayList<T> left = inOrder(current.left);
+      ArrayList<T> right = inOrder(current.right);
+
+      ArrayList<T> result = new ArrayList<>();
+      result.add(current.value);
+      result.addAll(left);
+      result.addAll(right);
+      return result;
     }
-    if (root.right != null){
-      preOrder(root.right);
-    }
-    return br;
   }
 
   // left, root, right
-  public ArrayList<Integer> inOrder(Node root){
-    if(root.left != null){
-      inOrder(root.left);
+  public ArrayList<T> inOrder(Node<T> current){
+    if(current == null){
+      return new ArrayList<T>();
+    } else {
+      ArrayList<T> left = inOrder(current.left);
+      ArrayList<T> right = inOrder(current.right);
+
+      ArrayList<T> result = new ArrayList<>();
+      result.addAll(left);
+      result.add(current.value);
+      result.addAll(right);
+      return result;
     }
-    br.add(root.value);
-    if(root.right != null){
-      inOrder(root.right);
-    }
-    return br;
   }
 
   // left, right, root
-  public ArrayList<Integer> postOrder(Node root){
-    if(root.left != null){
-      postOrder(root.left);
+  public ArrayList<T> postOrder(Node<T> current){
+    if(current == null){
+      return new ArrayList<T>();
+    } else {
+      ArrayList<T> left = inOrder(current.left);
+      ArrayList<T> right = inOrder(current.right);
+
+      ArrayList<T> result = new ArrayList<>();
+      result.addAll(left);
+      result.addAll(right);
+      result.add(current.value);
+      return result;
     }
-    if(root.right != null){
-      postOrder(root.right);
+  }
+
+  // TODO:
+  public ArrayList<Node> breadthFirst(){
+    ArrayList<Node> ans = new ArrayList<>();
+    Queue<Node> q = new Queue();
+    q.enqueue(this.root);
+    while(!ans.isEmpty()){
+      Node current = q.dequeue();
+      ans.add(current);
+      if(current.left != null){
+        q.enqueue(current.left);
+      }
+      if(current.right != null){
+        q.enqueue(current.right);
+      }
     }
-    br.add(root.value);
-    return br;
+    return ans;
+  }
+
+  public int findMaxValue(Node root) {
+    int max = -1;
+    if (root == null) return max;
+    max = (int) root.value;
+    max = findMaxValue(root.left) > max ? findMaxValue(root.left) : max;
+    max = findMaxValue(root.right) > max ? findMaxValue(root.right) : max;
+    return max;
   }
 
   public String toString() {

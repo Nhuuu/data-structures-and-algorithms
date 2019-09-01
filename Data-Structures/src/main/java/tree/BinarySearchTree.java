@@ -1,13 +1,9 @@
 package tree;
 
-import java.util.ArrayList;
 
-public class BinarySearchTree {
-  Node root;
-  ArrayList<Integer> br = new ArrayList<>();
-
+public class BinarySearchTree<T> extends BinaryTree {
   public BinarySearchTree(){
-    this.root = null;
+    super();
   };
 
   public void add(int value) {
@@ -16,7 +12,7 @@ public class BinarySearchTree {
     } else {
       Node current = this.root;
       while (current != null) {
-        if (value < current.value) {
+        if (value < (int)current.value) {
           if (current.left == null) {
             current.left = new Node(value);
             return;

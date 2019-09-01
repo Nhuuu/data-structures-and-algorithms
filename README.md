@@ -18,3 +18,6 @@ This root README is where the links to daily work should live.
 * [FIFO Animal Shelter](./otherReadmes/FifoAnimalShelter.md)
 * [Multi Bracket Validation](./otherReadmes/MultiBracketValidation.md)
 * [Binary Search Tree](./otherReadmes/BinarySearchTree.md)
+* [Fizz Buzz Tree](./otherReadmes/FizzBuzzTree.md)
+* [Breadth First Traversal](./otherReadmes/BreadthFirst.md)
+* [Find Maximum Value](./otherReadmes/FindMaxValue>.md)

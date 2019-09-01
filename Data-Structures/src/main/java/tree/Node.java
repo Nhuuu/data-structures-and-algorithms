@@ -1,21 +1,21 @@
 package tree;
 
-public class Node <Integer> {
-  int value;
-  Node<Integer> left;
-  Node<Integer> right;
+public class Node <T> {
+  T value;
+  Node<T> left;
+  Node<T> right;
 
-  public Node(int value, Node left, Node right) {
+  public Node(T value, Node left, Node right) {
     this.value = value;
     this.left = left;
     this.right = right;
   }
 
-  public Node(int value) {
+  public Node(T value) {
     this(value, null, null);
   }
 
-  public int getValue(){
+  public T getValue(){
     return this.value;
   }
 
