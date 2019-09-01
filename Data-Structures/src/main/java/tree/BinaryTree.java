@@ -80,13 +80,17 @@ public class BinaryTree<T> {
     return ans;
   }
 
-  public int findMaxValue(Node root){
+  public int findMaxValue(Node root) {
     int max = -1;
-    if(root == null) return max;
-    max = (int)root.value;
+    if (root == null) return max;
+    max = (int) root.value;
     max = findMaxValue(root.left) > max ? findMaxValue(root.left) : max;
     max = findMaxValue(root.right) > max ? findMaxValue(root.right) : max;
     return max;
+  }
+
+  public String toString() {
+    return this.root.toString();
   }
 
 }

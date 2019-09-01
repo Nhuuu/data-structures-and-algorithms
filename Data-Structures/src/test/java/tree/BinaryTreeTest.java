@@ -95,10 +95,32 @@ public class BinaryTreeTest {
     assertTrue((int)searchTree.root.value == 1);
   }
 
-  // multiple adds
+  @Test
+  public void testBinarySearchTree_addMultiple(){
+    searchTree.add(6);
+    searchTree.add(4);
+    searchTree.add(7);
+    assertTrue((int)searchTree.root.value == 6);
+    assertTrue((int)searchTree.root.left.value == 4);
+    assertTrue((int)searchTree.root.right.value == 7);
+  }
 
-  // contains test
+  @Test
+  public void testBinarySearchTree_contains(){
+    searchTree.root = new Node(6);
+    searchTree.add(4);
+    searchTree.add(7);
+    searchTree.add(12);
+    assertTrue(searchTree.contains(searchTree.root, 12));
+  }
 
+  @Test
+  public void testBinarySearchTree_doesNotContain(){
+    searchTree.root = new Node(6);
+    searchTree.add(4);
+    searchTree.add(7);
+    assertFalse(searchTree.contains(searchTree.root, 12));
+  }
 
   @Test
   public void testFizzBuzz(){
@@ -129,4 +151,5 @@ public class BinaryTreeTest {
   public void testFindMax_emptyTree(){
     assertEquals(-1, tree.findMaxValue(tree.root));
   }
+
 }

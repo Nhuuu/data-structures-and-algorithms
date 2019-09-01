@@ -6,16 +6,15 @@ public class BinarySearchTree<T> extends BinaryTree {
     super();
   };
 
-  // TODO:
-  public void add(T value) {
+  public void add(int value) {
     if (this.root == null) {
       this.root = new Node<>(value);
     } else {
-      Node<T> current = this.root;
+      Node current = this.root;
       while (current != null) {
-        if ((int)value < (int)current.value) {
+        if (value < (int)current.value) {
           if (current.left == null) {
-            current.left = new Node(value, current, null);
+            current.left = new Node(value);
             return;
           } else {
             current = current.left;
@@ -23,6 +22,7 @@ public class BinarySearchTree<T> extends BinaryTree {
         } else {
           if (current.right == null) {
             current.right = new Node(value);
+            return;
           } else {
             current = current.right;
           }
@@ -31,10 +31,17 @@ public class BinarySearchTree<T> extends BinaryTree {
     }
   }
 
-  // TODO:
-//   Whether or not the value is in the tree at least once.
-//  public boolean contains(int value){
-//
-//  }
+  public boolean contains(Node<Integer> root, int value){
+    if (root == null){
+      return false;
+    }
+    if(root.value == value){
+      return true;
+    }
+    if(root.value >= value){
+      return contains(root.left, value);
+    }
+    return contains(root.right, value);
+  }
 
 }
