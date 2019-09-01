@@ -10,26 +10,42 @@ public class BinarySearchTree {
     this.root = null;
   };
 
-  public void add(int value){
-    Node current = this.root;
-    if(current == null){
-      this.root = new Node(value);
-    } else if(value < current.value){
-      while(current.left != null){
-        current = current.left;
+  public void add(int value) {
+    if (this.root == null) {
+      this.root = new Node<>(value);
+    } else {
+      Node current = this.root;
+      while (current != null) {
+        if (value < current.value) {
+          if (current.left == null) {
+            current.left = new Node(value);
+            return;
+          } else {
+            current = current.left;
+          }
+        } else {
+          if (current.right == null) {
+            current.right = new Node(value);
+            return;
+          } else {
+            current = current.right;
+          }
+        }
       }
-      current.left = new Node(value, current, null);
-    } else if(value > current.value){
-      while(current.right != null){
-        current = current.right;
-      }
-      current.right = new Node(value, current, null);
     }
   }
 
-  // Whether or not the value is in the tree at least once.
-//  public boolean contains(int value){
-//
-//  }
+  public boolean contains(Node<Integer> root, int value){
+    if (root == null){
+      return false;
+    }
+    if(root.value == value){
+      return true;
+    }
+    if(root.value >= value){
+      return contains(root.left, value);
+    }
+    return contains(root.right, value);
+  }
 
 }

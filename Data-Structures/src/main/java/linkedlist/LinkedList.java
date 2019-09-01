@@ -1,9 +1,6 @@
 package linkedlist;
 
-import javax.management.RuntimeErrorException;
-
 public class LinkedList<T> {
-
   Node head;
   Node <T> current;
 

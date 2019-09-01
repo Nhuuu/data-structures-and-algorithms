@@ -10,30 +10,6 @@ public class BinaryTree {
     this.root = null;
   }
 
-  // breadth traversal to add
-//  public int add(int value){
-//    Node current = this.root;
-//    Node left; Node right;
-//    if(this.root == null){
-//      this.root = new Node(value);
-//    } else {
-//      left = current.left;
-//      right = current.right;
-//      while(current != null){
-//        if(left == null) {
-//          left = new Node(value);
-//          current = left;
-//        } else if(right == null){
-//          right = new Node(value);
-//          current = right;
-//        } else {
-//          current = current.left;
-//        }
-//      }
-//    }
-//    return current.getValue();
-//  }
-
   // left, right, root
   public ArrayList<Integer> preOrder(Node root){
     br.add(root.value);
@@ -68,6 +44,10 @@ public class BinaryTree {
     }
     br.add(root.value);
     return br;
+  }
+
+  public String toString() {
+    return this.root.toString();
   }
 
 }

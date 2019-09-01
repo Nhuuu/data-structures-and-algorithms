@@ -89,18 +89,37 @@ public class BinaryTreeTest {
   @Test
   public void testBinarySearchTree_addRoot(){
     searchTree.add(1);
-    assertTrue(searchTree.root.value == 1);
+    assertTrue((int)searchTree.root.value == 1);
   }
 
   @Test
   public void testBinarySearchTree_addMultiple(){
-    searchTree.add(1);
-    searchTree.add(2);
-    searchTree.add(3);
-    assertTrue(searchTree.root.value == 1);
-//    assertTrue(searchTree.root.left.value == 2);
-    assertEquals(2, searchTree.root.left.value);
-//    assertTrue(searchTree.root.right.value == 3);
+    searchTree.add(6);
+    searchTree.add(4);
+    searchTree.add(7);
+    assertTrue((int)searchTree.root.value == 6);
+    assertTrue((int)searchTree.root.left.value == 4);
+    assertTrue((int)searchTree.root.right.value == 7);
   }
+
+  @Test
+  public void testBinarySearchTree_contains(){
+    searchTree.root = new Node(6);
+    searchTree.add(4);
+    searchTree.add(7);
+    searchTree.add(12);
+    assertTrue(searchTree.contains(searchTree.root, 12));
+  }
+
+  @Test
+  public void testBinarySearchTree_doesNotContain(){
+    searchTree.root = new Node(6);
+    searchTree.add(4);
+    searchTree.add(7);
+    assertFalse(searchTree.contains(searchTree.root, 12));
+  }
+
+
+
 
 }
