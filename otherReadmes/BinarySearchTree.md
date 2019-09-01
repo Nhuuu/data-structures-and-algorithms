@@ -10,7 +10,7 @@
 * Define a method named contains that accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once.
 
 ## Approach & Efficiency
-<!-- Used a stack to hold opening brackets and popped them off the stack when the corresponding closing bracket was found. If the closing brakcet did not match the top node in the stack, then the method would return false. If the stack is not empty in the end after iterating through the entire string input, it would also return false. This operates with a time and space complexity of O(n). -->
+...
 
 ## API
 * preOrder()

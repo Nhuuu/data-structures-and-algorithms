@@ -62,14 +62,13 @@ public class BinaryTree<T> {
     }
   }
 
-  // TODO:
-  public ArrayList<Node> breadthFirst(){
-    ArrayList<Node> ans = new ArrayList<>();
+  public ArrayList<T> breadthFirst(){
+    ArrayList<T> ans = new ArrayList<>();
     Queue<Node> q = new Queue();
     q.enqueue(this.root);
-    while(!ans.isEmpty()){
+    while(!q.isEmpty()){
       Node current = q.dequeue();
-      ans.add(current);
+      ans.add((T)current.value);
       if(current.left != null){
         q.enqueue(current.left);
       }
