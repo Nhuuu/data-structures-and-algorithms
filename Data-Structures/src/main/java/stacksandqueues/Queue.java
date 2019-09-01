@@ -39,4 +39,10 @@ public class Queue<T> {
     return this.front.getValue();
   }
 
+  public boolean isEmpty(){
+    if(front == null && rear == null){
+      return true;
+    }
+    return false;
+  }
 }
