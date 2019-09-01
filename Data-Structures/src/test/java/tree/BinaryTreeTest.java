@@ -129,17 +129,16 @@ public class BinaryTreeTest {
     assertEquals(test, t.inOrder(t.root));
   }
 
-  // TODO:
   @Test
   public void testBreadthFirst(){
     ArrayList<Integer> test = new ArrayList<>(Arrays.asList(6,4,10,1,5,7));
-    assertEquals(test, tree2.breadthFirst());
+    assertEquals(test, tree2.breadthFirst(tree2.root));
   }
 
   @Test
   public void testBreadthFirst_emptyTree(){
     ArrayList<Integer> test = new ArrayList<>(Arrays.asList());
-    assertEquals(test, tree.breadthFirst());
+    assertEquals(test, tree.breadthFirst(tree.root));
   }
 
   @Test
