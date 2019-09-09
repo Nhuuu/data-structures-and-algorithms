@@ -12,4 +12,11 @@ public class InsertionSortTest {
     int[] expected = new int[]{1,3,7,8,9};
     assertArrayEquals(expected, InsertionSort.sort(arr));
   }
+
+  @Test
+  public void sort_emptyarray() {
+    int[] arr = new int[]{};
+    int[] expected = new int[]{};
+    assertArrayEquals(expected, InsertionSort.sort(arr));
+  }
 }

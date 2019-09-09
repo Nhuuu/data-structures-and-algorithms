@@ -6,14 +6,7 @@ In-place comparison-based sorting algorithm that sorts a list one item at a time
   * In-place: requires constant space O(1).
 
 ## Learning Objectives
-Students will learn how to implement an insertion sort algorithm.
-
-### Information Flow
-* Main Point
-  * Supporting points
-
-* Another main point
-  * More details
+Students will learn how to implement an insertion sort algorithm on a list.
 
 ### Diagram
 ![]()
@@ -43,3 +36,7 @@ InsertionSort(int[] arr)
 * Read
   * https://www.geeksforgeeks.org/insertion-sort/
   * https://www.tutorialspoint.com/data_structures_algorithms/insertion_sort_algorithm.htm
+
+
+* [Link to code](../code401challenges/src/main/java/code401challenges/InsertionSort.java)
+* [Link to tests](../code401challenges/src/test/java/code401challenges/InsertionSortTest.java)
