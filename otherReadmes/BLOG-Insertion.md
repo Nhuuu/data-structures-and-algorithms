@@ -9,7 +9,7 @@ In-place comparison-based sorting algorithm that sorts a list one item at a time
 Students will learn how to implement an insertion sort algorithm on a list.
 
 ### Diagram
-![]()
+![Insertion Image](insertion_sort.png)
 
 ### Algorithm
 Insertion sort iterates through the list. If it is the first element, it's already sorted and returns 1. On to the next element, it compares that element with all the elements in the sorted sub-list and swaps that value each time an item in the sub-list is greater than that element's value. This repeats until the entire list is sorted.
