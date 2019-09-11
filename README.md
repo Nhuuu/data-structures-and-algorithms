@@ -21,4 +21,6 @@ This root README is where the links to daily work should live.
 * [Fizz Buzz Tree](./otherReadmes/FizzBuzzTree.md)
 * [Breadth First Traversal](./otherReadmes/BreadthFirst.md)
 * [Find Maximum Value](./otherReadmes/FindMaxValue.md)
-* [Insertion Sort](./otherReadmes/BLOG.md)
+* [Insertion Sort](./otherReadmes/BLOG-Insertion.md)
+* [Merge Sort](./otherReadmes/BLOG-merge.md)
+* [Quick Sort](./otherReadmes/BLOG-quicksort.md)
