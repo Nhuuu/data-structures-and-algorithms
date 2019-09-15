@@ -18,23 +18,23 @@ public class MergeSort {
   }
 
   // merge helper method
-  public static int[] merge(int[] left, int[] right, int[] arr){
+  public static int[] merge(int[] arr1, int[] arr2, int[] arr){
     int i = 0; int j = 0; int k = 0;
-    while(i < left.length && j < right.length){
-      if(left[i] <= right[j]){
-        arr[k] = left[i];
+    while(i < arr1.length && j < arr2.length){
+      if(arr1[i] <= arr2[j]){
+        arr[k] = arr1[i];
         i = i + 1;
       } else {
-        arr[k] = right[j];
+        arr[k] = arr2[j];
         j = j + 1;
       }
       k = k + 1;
     }
-    while(i < left.length){
-      arr[k++] = left[i++];
+    while(i < arr1.length){
+      arr[k++] = arr1[i++];
     }
-    while(j < right.length){
-      arr[k++] = right[j++];
+    while(j < arr2.length){
+      arr[k++] = arr2[j++];
     }
     return arr;
   }
