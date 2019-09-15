@@ -1,7 +1,7 @@
 package code401challenges;
 
 public class QuickSort {
-
+  // quicksort(arr, 0, arr.length - 1)
   public static void quickSort(int[] arr, int left, int right){
     if(left < right){
       int position = partition(arr, left, right);
