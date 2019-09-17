@@ -12,12 +12,18 @@ Implement a Hashtable
 * Without utilizing any of the built-in library methods available to your language, return the first word to occur more than once in that provided string.
 * ![Repeated Word Visual](../assets/repeatedword.jpg)
 
+## TreeIntersection.java
+* Write a function called tree_intersection that takes two binary tree parameters.
+* Without utilizing any of the built-in library methods available to your language, return a set of values found in both trees.
+* ![Tree Intersection Visual](../assets/treeintersection.jpg)
+
 ## API
 * hash()
 * add()
 * get()
 * contains()
 * repeatedWord()
+* treeIntersection()
 
 
 * [Hashtable](../Data-Structures/src/main/java/hashtable)
