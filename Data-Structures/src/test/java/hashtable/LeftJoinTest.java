@@ -3,6 +3,7 @@ package hashtable;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 import static org.junit.Assert.*;
@@ -33,9 +34,14 @@ public class LeftJoinTest {
 
   @Test
   public void leftJoin() {
-//    HashMap<String, Value> expected = new HashMap<>();
-//    HashMap<String, Value> result = LeftJoin.leftJoin(hm_empty, hm2);
-//    assertEquals(expected, result);
+    String expected = "diligent = [employed, idle] wrath = [anger, delight] guide = [usher, follow] fond = [enamored, averse] ";
+    HashMap<String, String[]> result = LeftJoin.leftJoin(hm1, hm2);
+    String resultString = "";
+    for(String k : result.keySet()){
+      resultString += k + " = " + Arrays.toString(result.get(k)) + " ";
+    }
+    System.out.println(resultString);
+    assertEquals(expected, resultString);
   }
 
   @Test
@@ -47,8 +53,14 @@ public class LeftJoinTest {
 
   @Test
   public void leftJoin_hm2_empty() {
-    HashMap<String, String[]> expected = new HashMap<>();
+    String expected = "diligent = [employed, null] outfit = [garb, null] wrath = [anger, null] guide = [usher, null] " +
+        "fond = [enamored, null] ";
     HashMap<String, String[]> result = LeftJoin.leftJoin(hm1, hm_empty);
-    assertEquals(expected, result);
+    String resultString = "";
+    for(String k : result.keySet()){
+      resultString += k + " = " + Arrays.toString(result.get(k)) + " ";
+    }
+    System.out.println(resultString);
+    assertEquals(expected, resultString);
   }
 }
