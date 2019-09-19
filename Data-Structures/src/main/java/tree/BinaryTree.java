@@ -19,8 +19,8 @@ public class BinaryTree<T> {
     if(current == null){
       return new ArrayList<T>();
     } else {
-      ArrayList<T> left = inOrder(current.left);
-      ArrayList<T> right = inOrder(current.right);
+      ArrayList<T> left = preOrder(current.left);
+      ArrayList<T> right = preOrder(current.right);
 
       ArrayList<T> result = new ArrayList<>();
       result.add(current.value);
@@ -51,8 +51,8 @@ public class BinaryTree<T> {
     if(current == null){
       return new ArrayList<T>();
     } else {
-      ArrayList<T> left = inOrder(current.left);
-      ArrayList<T> right = inOrder(current.right);
+      ArrayList<T> left = postOrder(current.left);
+      ArrayList<T> right = postOrder(current.right);
 
       ArrayList<T> result = new ArrayList<>();
       result.addAll(left);
