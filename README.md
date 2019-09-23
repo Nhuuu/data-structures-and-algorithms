@@ -25,3 +25,4 @@ This root README is where the links to daily work should live.
 * [Merge Sort](./otherReadmes/BLOG-merge.md)
 * [Quick Sort](./otherReadmes/BLOG-quicksort.md)
 * [Hash Tables](./otherReadmes/HashTables.md)
+* [Graphs](./otherReadmes/Graphs.md)
