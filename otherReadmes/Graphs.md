@@ -1,7 +1,7 @@
 # Graphs
 Implement a graph. The graph should be represented as an adjacency list.
 
-## API
+## Graph.java, API
 * addNode()
   * Adds a new node to the graph
   * Takes in the value of that node
@@ -24,6 +24,8 @@ Implement a graph. The graph should be represented as an adjacency list.
 * size()
   * Returns the total number of nodes in the graph
 
+* breadthFirst()
+  * traverses a graph using a Queue
 
 * [Graph](../Data-Structures/src/main/java/graph)
 * [Graph Tests](../Data-Structures/src/test/java/graph)
