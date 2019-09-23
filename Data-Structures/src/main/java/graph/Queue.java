@@ -1,4 +1,4 @@
-package stacksandqueues;
+package graph;
 
 public class Queue<T> {
   Node<T> front;

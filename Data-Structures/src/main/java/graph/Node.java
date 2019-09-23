@@ -4,6 +4,7 @@ import java.util.HashSet;
 
 public class Node<T> {
   public T value;
+  public Node<T> next;
   public HashSet<Edge> neighbors;
 
   public Node(T value){
@@ -19,6 +20,10 @@ public class Node<T> {
   public void addNeighbor(Node<T> node, int weight){
     Edge e = new Edge(node, weight);
     this.neighbors.add(e);
+  }
+
+  public T getValue() {
+    return value;
   }
 
   public String toString(){
