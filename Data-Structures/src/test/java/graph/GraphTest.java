@@ -3,6 +3,7 @@ package graph;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 
@@ -11,10 +12,38 @@ import static org.junit.Assert.*;
 public class GraphTest {
 
   Graph g;
+  Graph routes;
   @Before
   public void setUp(){
     g = new Graph();
     g.addNode(new Node("hi"));
+
+    routes = new Graph();
+
+    Node pandora = new Node("pandora");
+    Node narnia = new Node("narnia");
+    Node metroville = new Node("metroville");
+    Node arendelle = new Node("arendelle");
+    Node naboo = new Node("naboo");
+    Node monstropolis = new Node("monstropolis");
+
+    routes.addNode(pandora);
+    routes.addNode(narnia);
+    routes.addNode(metroville);
+    routes.addNode(arendelle);
+    routes.addNode(naboo);
+    routes.addNode(monstropolis);
+
+    routes.addEdge(pandora, metroville, 82);
+    routes.addEdge(pandora, arendelle, 150);
+    routes.addEdge(metroville, narnia, 37);
+    routes.addEdge(metroville, naboo, 26);
+    routes.addEdge(metroville, monstropolis, 105);
+    routes.addEdge(metroville, arendelle, 99);
+    routes.addEdge(narnia, naboo, 250);
+    routes.addEdge(naboo, monstropolis, 73);
+    routes.addEdge(monstropolis, arendelle, 42);
+
   }
 
   @Test
@@ -81,4 +110,37 @@ public class GraphTest {
 
     assertEquals(expected, nums.breadthFirst(node1));
   }
+
+  @Test
+  public void getEdgeTest_route_does_not_exist(){
+    HashMap expected = new HashMap();
+    expected.put(false, 0);
+    String[] names = new String[]{"naboo", "pandora"};
+    assertEquals(expected, Graph.getEdge(routes, names));
+  }
+
+  @Test
+  public void getEdgeTest_route_does_not_exist_2(){
+    HashMap expected = new HashMap();
+    expected.put(false, 0);
+    String[] names = new String[]{"narnia", "arendelle", "naboo"};
+    assertEquals(expected, Graph.getEdge(routes, names));
+  }
+
+  @Test
+  public void getEdgeTest_direct_route_exists(){
+    HashMap expected = new HashMap();
+    expected.put(true, 82);
+    String[] names = new String[]{"metroville", "pandora"};
+    assertEquals(expected, Graph.getEdge(routes, names));
+  }
+
+  @Test
+  public void getEdgeTest_direct_route_exists_2(){
+    HashMap expected = new HashMap();
+    expected.put(true, 115);
+    String[] names = new String[]{"arendelle", "monstropolis", "naboo"};
+    assertEquals(expected, Graph.getEdge(routes, names));
+  }
+
 }
