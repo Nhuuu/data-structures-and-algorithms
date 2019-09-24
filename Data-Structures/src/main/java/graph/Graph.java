@@ -1,6 +1,7 @@
 package graph;
 
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 
@@ -21,6 +22,13 @@ public class Graph<T> {
     if(this.vertices.contains(node1) && this.vertices.contains(node2)){
       node1.addNeighbor(node2);
       node2.addNeighbor(node1);
+    }
+  }
+
+  public void addEdge(Node<T> node1, Node<T> node2, int weight){
+    if(this.vertices.contains(node1) && this.vertices.contains(node2)){
+      node1.addNeighbor(node2, weight);
+      node2.addNeighbor(node1, weight);
     }
   }
 
@@ -59,4 +67,33 @@ public class Graph<T> {
     }
     return result;
   }
+
+  public static HashMap<Boolean, Integer> getEdge(Graph routes, String[] cityNames) {
+    HashMap<Boolean, Integer> result = new HashMap<>();
+    int cost = 0;
+    boolean b = false;
+    Node current;
+//    if(routes.vertices.contains(cityNames[0])){
+      for(Object n : routes.vertices){
+        if(cityNames[0].equals(n)){
+          current = (Node) n;
+        } 
+      }
+//    }
+    System.out.println(routes.vertices);
+    System.out.println(current.value);
+
+//    for (Edge neighbor : (HashSet<Edge>) current.neighbors) {
+//      for (int i = 1; i < cityNames.length; i++) {
+//        if (neighbor.getNode().value == cityNames[i]) {
+//          b = true;
+//          cost = cost + neighbor.getWeight();
+//          current = neighbor.getNode();
+//        }
+//      }
+//    }
+    result.put(b, cost);
+    return result;
+  }
+
 }

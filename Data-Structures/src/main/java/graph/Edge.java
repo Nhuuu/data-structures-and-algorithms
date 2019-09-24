@@ -16,4 +16,8 @@ public class Edge<T> {
   public Node<T> getNode() {
     return this.node;
   }
+
+  public int getWeight() {
+    return weight;
+  }
 }
