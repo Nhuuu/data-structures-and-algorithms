@@ -77,11 +77,11 @@ public class Graph<T> {
       for(Object n : routes.vertices){
         if(cityNames[0].equals(n)){
           current = (Node) n;
-        } 
+        }
       }
 //    }
     System.out.println(routes.vertices);
-    System.out.println(current.value);
+//    System.out.println(current.value);
 
 //    for (Edge neighbor : (HashSet<Edge>) current.neighbors) {
 //      for (int i = 1; i < cityNames.length; i++) {

@@ -63,8 +63,7 @@ public class LinkedList<T> {
     }
     this.current = head;
     while(current != null){
-      if(current.next.value == target){
-        current = current.next;
+      if(current.value == target){
         current.next = new Node(value, current.next);
         return;
       }
