@@ -1,6 +1,8 @@
 package graph;
 
 
+import stacksandqueues.Stack;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -93,6 +95,29 @@ public class Graph<T> {
 //      }
 //    }
     result.put(b, cost);
+    return result;
+  }
+
+
+  public static LinkedList<Node> depthFirst(Node start){
+    LinkedList result = new LinkedList();
+    HashSet<Node> visited = new HashSet<>();
+
+    Stack stack  = new Stack();
+    stack.push(start);
+    visited.add(start);
+
+    while(!stack.isEmpty()){
+      Node tempNode = (Node) stack.pop();
+      result.add(tempNode);
+
+      for(Edge neighbor: (HashSet<Edge>) tempNode.neighbors){
+        if(!visited.contains(neighbor.getNode())){
+          stack.push(neighbor.getNode());
+          visited.add(neighbor.getNode());
+        }
+      }
+    }
     return result;
   }
 
