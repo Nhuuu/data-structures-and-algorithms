@@ -31,6 +31,9 @@ Implement a graph. The graph should be represented as an adjacency list.
   * Given a business trip itinerary, and an Alaska Airlines route map, is the trip possible with direct flights? If so, how much will the total trip cost be?
   * White a function which takes in a graph, and an array of city names. Return whether the full trip is possible with direct flights, and how much it would cost.
 
+* depthFirst()
+  * preorder traverses a graph using a Stack
+
 * [Graph](../Data-Structures/src/main/java/graph)
 * [Graph Tests](../Data-Structures/src/test/java/graph)
 
