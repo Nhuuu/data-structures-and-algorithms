@@ -143,4 +143,26 @@ public class GraphTest {
     assertEquals(expected, Graph.getEdge(routes, names));
   }
 
+  @Test
+  public void depthFirstTest(){
+    Graph gr = new Graph();
+    Node yo = new Node("yo");
+    Node hello = new Node("hello");
+    Node hey = new Node("hey");
+    gr.addNode(yo);
+    gr.addNode(hello);
+    gr.addNode(hey);
+
+    yo.addNeighbor(hello);
+    yo.addNeighbor(hey);
+
+    LinkedList<Node> expected = new LinkedList<>();
+    expected.add(yo);
+    expected.add(hello);
+    expected.add(hey);
+
+    assertEquals(expected, gr.depthFirst(yo));
+  }
+
+
 }
