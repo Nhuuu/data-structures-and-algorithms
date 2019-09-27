@@ -72,7 +72,7 @@ public class BinaryTreeTest {
 
   @Test
   public void testPreOrderTraversal(){
-    ArrayList<Integer> test = new ArrayList<>(Arrays.asList(6,1,4,5,7,10));
+    ArrayList<Integer> test = new ArrayList<>(Arrays.asList(6,4,1,5,10,7));
     ArrayList result = tree2.preOrder(tree2.root);
     assertEquals(test, result);
   }
@@ -85,7 +85,7 @@ public class BinaryTreeTest {
 
   @Test
   public void testPostOrderTraversal(){
-    ArrayList<Integer> test = new ArrayList<>(Arrays.asList(1,4,5,7,10,6));
+    ArrayList<Integer> test = new ArrayList<>(Arrays.asList(1,5,4,7,10,6));
     assertEquals(test, tree2.postOrder(tree2.root));
   }
 
@@ -133,12 +133,6 @@ public class BinaryTreeTest {
   public void testBreadthFirst(){
     ArrayList<Integer> test = new ArrayList<>(Arrays.asList(6,4,10,1,5,7));
     assertEquals(test, tree2.breadthFirst(tree2.root));
-  }
-
-  @Test
-  public void testBreadthFirst_emptyTree(){
-    ArrayList<Integer> test = new ArrayList<>(Arrays.asList());
-    assertEquals(test, tree.breadthFirst(tree.root));
   }
 
   @Test
